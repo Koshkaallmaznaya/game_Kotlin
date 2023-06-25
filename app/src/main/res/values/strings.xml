@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Hiden gallery</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_home_page">Hiden gallery</string>
+    <string name="title_list_level">Произведения</string>
+    <string name="title_statistic">Статистика</string>
+    <string name="title_level">Уровень</string>
+</resources>

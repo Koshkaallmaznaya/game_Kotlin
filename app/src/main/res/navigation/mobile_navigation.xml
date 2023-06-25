@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="ru.dpankratov.hidengallery.ui.home.HomeFragment"
+        android:label="@string/title_home_page"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/listLevelFragment"
+        android:name="ru.dpankratov.hidengallery.ui.listlevel.ListLevelFragment"
+        android:label="@string/title_list_level"
+        tools:layout="@layout/fragment_level_list" />
+
+    <fragment
+        android:id="@+id/statisticFragment"
+        android:name="ru.dpankratov.hidengallery.ui.statistic.StatisticFragment"
+        android:label="@string/title_statistic"
+        tools:layout="@layout/fragment_statistic" />
+
+    <fragment
+        android:id="@+id/levelFragment2"
+        android:name="ru.dpankratov.hidengallery.ui.level.LevelFragment"
+        android:label="@string/title_level"
+        tools:layout="@layout/fragment_level" />
+</navigation>
