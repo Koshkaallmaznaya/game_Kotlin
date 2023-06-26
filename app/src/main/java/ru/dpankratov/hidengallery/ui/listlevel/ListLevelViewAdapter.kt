@@ -3,7 +3,9 @@ package ru.dpankratov.hidengallery.ui.listlevel
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import ru.dpankratov.hidengallery.R
 
 import ru.dpankratov.hidengallery.placeholder.PlaceholderContent.PlaceholderItem
 import ru.dpankratov.hidengallery.databinding.ListLevelElementBinding
@@ -17,7 +19,6 @@ class ListLevelViewAdapter(
 ) : RecyclerView.Adapter<ListLevelViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-
         return ViewHolder(
             ListLevelElementBinding.inflate(
                 LayoutInflater.from(parent.context),
@@ -25,12 +26,12 @@ class ListLevelViewAdapter(
                 false
             )
         )
-
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
         holder.idView.text = item.id
+        holder.idImage.setImageResource(R.drawable.rectangle)
     }
 
     override fun getItemCount(): Int = values.size
@@ -38,5 +39,6 @@ class ListLevelViewAdapter(
     inner class ViewHolder(binding: ListLevelElementBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val idView: TextView = binding.itemNumber
+        val idImage: ImageView = binding.imageView
     }
 }

@@ -27,7 +27,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="Откройте Италию \n с нашей \n мини-игрой"
+        android:text="Откройте эпоху \n Возрождения \n с этой \n мини-игрой"
         android:textAlignment="center"
         android:textColor="?attr/colorOnPrimary"
         android:textSize="40sp"
