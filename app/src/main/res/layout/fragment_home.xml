@@ -20,11 +20,11 @@
         app:layout_constraintBottom_toTopOf="@id/Italy"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Italy"
-        android:layout_width="0dp"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
         android:text="Откройте эпоху \n Возрождения \n с этой \n мини-игрой"
@@ -32,9 +32,9 @@
         android:textColor="?attr/colorOnPrimary"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Hello"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

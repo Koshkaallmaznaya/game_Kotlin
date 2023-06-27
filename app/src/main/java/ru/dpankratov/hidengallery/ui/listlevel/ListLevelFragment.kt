@@ -1,5 +1,6 @@
 package ru.dpankratov.hidengallery.ui.listlevel
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
@@ -10,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import ru.dpankratov.hidengallery.R
 import ru.dpankratov.hidengallery.placeholder.PlaceholderContent
+import ru.dpankratov.hidengallery.ui.level.LevelFragment
 
 /**
  * A fragment representing a list of Items.
