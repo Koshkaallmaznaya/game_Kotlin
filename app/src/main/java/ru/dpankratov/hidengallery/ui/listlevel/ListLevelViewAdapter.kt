@@ -30,8 +30,12 @@ class ListLevelViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
-        holder.idView.text = item.id
-        holder.idImage.setImageResource(R.drawable.rectangle)
+        holder.idView.text = item.id.toString()
+        if (item.pass) {
+            holder.idImage.setImageResource(item.photo)
+        } else {
+            holder.idImage.setImageResource(R.drawable.rectangle)
+        }
     }
 
     override fun getItemCount(): Int = values.size

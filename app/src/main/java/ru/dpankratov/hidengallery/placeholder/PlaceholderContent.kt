@@ -1,5 +1,6 @@
 package ru.dpankratov.hidengallery.placeholder
 
+import ru.dpankratov.hidengallery.R
 import java.util.ArrayList
 import java.util.HashMap
 import kotlin.reflect.typeOf
@@ -11,16 +12,16 @@ import kotlin.reflect.typeOf
  * TODO: Replace all uses of this class before publishing your app.
  */
 val levels = arrayOf(
-    arrayOf(1, "описание", "@drawable/photo_level_1", false), arrayOf(2, "описание", "@drawable/photo_level_2", false),
-    arrayOf(3, "описание", "@drawable/photo_level_3", false), arrayOf(4, "описание", "@drawable/photo_level_3", false),
-    arrayOf(5, "описание", "@drawable/photo_level_5", false), arrayOf(6, "описание", "@drawable/photo_level_6", false),
-    arrayOf(7, "описание", "@drawable/photo_level_7", false), arrayOf(8, "описание", "@drawable/photo_level_8", false),
-    arrayOf(9, "описание", "@drawable/photo_level_9", false), arrayOf(10, "описание", "@drawable/photo_level_10", false),
-    arrayOf(11, "описание", "@drawable/photo_level_11", false), arrayOf(12, "описание", "@drawable/photo_level_12", false),
-    arrayOf(13, "описание", "@drawable/photo_level_13", false), arrayOf(14, "описание", "@drawable/photo_level_14", false),
-    arrayOf(15, "описание", "@drawable/photo_level_15", false), arrayOf(16, "описание", "@drawable/photo_level_16", false),
-    arrayOf(17, "описание", "@drawable/photo_level_17", false), arrayOf(18, "описание", "@drawable/photo_level_18", false),
-    arrayOf(19, "описание", "@drawable/photo_level_19", false), arrayOf(20, "описание", "@drawable/photo_level_20", false)
+    PlaceholderContent.PlaceholderItem(1, "описание", R.drawable.photo_level_1, true), PlaceholderContent.PlaceholderItem(2, "описание", R.drawable.photo_level_2, false),
+    PlaceholderContent.PlaceholderItem(3, "описание", R.drawable.photo_level_3, false), PlaceholderContent.PlaceholderItem(4, "описание", R.drawable.photo_level_4, false),
+    PlaceholderContent.PlaceholderItem(5, "описание", R.drawable.photo_level_5, false), PlaceholderContent.PlaceholderItem(6, "описание", R.drawable.photo_level_6, false),
+    PlaceholderContent.PlaceholderItem(7, "описание", R.drawable.photo_level_7, false), PlaceholderContent.PlaceholderItem(8, "описание", R.drawable.photo_level_8, false),
+    PlaceholderContent.PlaceholderItem(9, "описание", R.drawable.photo_level_9, false), PlaceholderContent.PlaceholderItem(10, "описание", R.drawable.photo_level_10, false),
+    PlaceholderContent.PlaceholderItem(11, "описание", R.drawable.photo_level_11, false), PlaceholderContent.PlaceholderItem(12, "описание", R.drawable.photo_level_12, false),
+    PlaceholderContent.PlaceholderItem(13, "описание", R.drawable.photo_level_13, false), PlaceholderContent.PlaceholderItem(14, "описание", R.drawable.photo_level_14, false),
+    PlaceholderContent.PlaceholderItem(15, "описание", R.drawable.photo_level_15, false), PlaceholderContent.PlaceholderItem(16, "описание", R.drawable.photo_level_16, false),
+    PlaceholderContent.PlaceholderItem(17, "описание", R.drawable.photo_level_17, false), PlaceholderContent.PlaceholderItem(18, "описание", R.drawable.photo_level_18, false),
+    PlaceholderContent.PlaceholderItem(19, "описание", R.drawable.photo_level_19, false), PlaceholderContent.PlaceholderItem(20, "описание", R.drawable.photo_level_20, false)
 )
 
 object PlaceholderContent {
@@ -35,18 +36,18 @@ object PlaceholderContent {
      */
     val ITEM_MAP: MutableMap<String, PlaceholderItem> = HashMap()
 
-    private val COUNT = 20
+    //private val COUNT = 20
 
     init {
         // Add some sample items.
-        for (i in 1..COUNT) {
-            addItem(PlaceholderItem(i.toString(), "levels[i][1].toString()", "levels[i][2].toString()", true))
+        for (i in 0..levels.size-1) {
+            addItem(levels[i])
         }
     }
 
     private fun addItem(item: PlaceholderItem) {
         ITEMS.add(item)
-        ITEM_MAP.put(item.id, item)
+        ITEM_MAP.put(item.id.toString(), item)
     }
 
     //private fun createPlaceholderItem(position: Int): PlaceholderItem {
@@ -65,7 +66,7 @@ object PlaceholderContent {
     /**
      * A placeholder item representing a piece of content.
      */
-    data class PlaceholderItem(val id: String, val content: String, val details: String, val pass: Boolean) {
+    data class PlaceholderItem(val id: Int, val content: String, val photo: Int, val pass: Boolean) {
         override fun toString(): String = content
     }
 }
