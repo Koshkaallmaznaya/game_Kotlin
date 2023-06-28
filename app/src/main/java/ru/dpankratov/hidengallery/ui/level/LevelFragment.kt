@@ -1,32 +1,45 @@
 package ru.dpankratov.hidengallery.ui.level
-
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import ru.dpankratov.hidengallery.R
+import androidx.fragment.app.Fragment
+import ru.dpankratov.hidengallery.databinding.FragmentLevelBinding
+import ru.dpankratov.hidengallery.placeholder.PlaceholderContent
 
 class LevelFragment : Fragment() {
 
     companion object {
-        fun newInstance() = LevelFragment()
+        private const val LEVEL_ID = "levelId"
+        @JvmStatic
+        fun newInstance(levelId: Int) = LevelFragment().apply {
+            arguments = Bundle().apply {
+                putInt(LEVEL_ID, levelId)
+            }
+        }
     }
 
-    private lateinit var viewModel: LevelViewModel
+    private var levelId: Int = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            levelId = it.getInt(LEVEL_ID)
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_level, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LevelViewModel::class.java)
-        // TODO: Use the ViewModel
+    ): View {
+        val item = PlaceholderContent.getItem(levelId)
+        return FragmentLevelBinding.inflate(
+            inflater,
+            container,
+            false
+        ).apply {
+             imageView2.setImageResource(item?.photo!!)
+        }.root
     }
 
 }

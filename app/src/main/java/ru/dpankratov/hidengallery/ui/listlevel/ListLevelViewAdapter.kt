@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import ru.dpankratov.hidengallery.R
 
 import ru.dpankratov.hidengallery.placeholder.PlaceholderContent.PlaceholderItem
@@ -12,7 +14,6 @@ import ru.dpankratov.hidengallery.databinding.ListLevelElementBinding
 
 /**
  * [RecyclerView.Adapter] that can display a [PlaceholderItem].
- * TODO: Replace the implementation with code for your data type.
  */
 class ListLevelViewAdapter(
     private val values: List<PlaceholderItem>
@@ -30,11 +31,15 @@ class ListLevelViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
-        holder.idView.text = item.id.toString()
+//        holder.idView.text = item.id.toString()
         if (item.pass) {
             holder.idImage.setImageResource(item.photo)
         } else {
             holder.idImage.setImageResource(R.drawable.rectangle)
+        }
+        holder.itemView.setOnClickListener {
+            val bundle = bundleOf("levelId" to item.id)
+            it.findNavController().navigate(R.id.levelFragment2, bundle)
         }
     }
 

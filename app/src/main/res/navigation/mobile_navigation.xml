@@ -9,23 +9,46 @@
         android:id="@+id/homeFragment"
         android:name="ru.dpankratov.hidengallery.ui.home.HomeFragment"
         android:label="@string/title_home_page"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_listLevelFragment"
+            app:destination="@id/listLevelFragment">
+        </action>
+        <action
+            android:id="@+id/action_homeFragment_to_statisticFragment"
+            app:destination="@id/statisticFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/listLevelFragment"
         android:name="ru.dpankratov.hidengallery.ui.listlevel.ListLevelFragment"
         android:label="@string/title_list_level"
-        tools:layout="@layout/fragment_level_list" />
+        tools:layout="@layout/fragment_level_list" >
+        <action
+            android:id="@+id/action_listLevelFragment_to_levelFragment2"
+            app:destination="@id/levelFragment2">
+        </action>
+        <argument
+            android:name="column-count"
+            app:argType="integer"
+            android:defaultValue="3" />
+    </fragment>
 
     <fragment
         android:id="@+id/statisticFragment"
         android:name="ru.dpankratov.hidengallery.ui.statistic.StatisticFragment"
         android:label="@string/title_statistic"
-        tools:layout="@layout/fragment_statistic" />
+        tools:layout="@layout/fragment_statistic">
+    </fragment>
 
     <fragment
         android:id="@+id/levelFragment2"
         android:name="ru.dpankratov.hidengallery.ui.level.LevelFragment"
         android:label="@string/title_level"
-        tools:layout="@layout/fragment_level" />
+        tools:layout="@layout/fragment_level">
+        <argument
+            android:name="levelId"
+            app:argType="integer" />
+    </fragment>
+
 </navigation>
