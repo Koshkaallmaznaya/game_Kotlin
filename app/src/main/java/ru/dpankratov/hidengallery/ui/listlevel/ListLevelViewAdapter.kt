@@ -37,7 +37,7 @@ class ListLevelViewAdapter(
             holder.idImage.setImageResource(R.drawable.rectangle)
         }
         holder.itemView.setOnClickListener {
-            val bundle = bundleOf("levelId" to item.id) /////бандл набор параметров, которые мы передаем (айди)
+            val bundle = bundleOf("levelId" to item.id)
             it.findNavController().navigate(R.id.levelFragment2, bundle)
         }
     }
