@@ -12,9 +12,6 @@ import ru.dpankratov.hidengallery.R
 import ru.dpankratov.hidengallery.placeholder.PlaceholderContent.PlaceholderItem
 import ru.dpankratov.hidengallery.databinding.ListLevelElementBinding
 
-/**
- * [RecyclerView.Adapter] that can display a [PlaceholderItem].
- */
 class ListLevelViewAdapter(
     private val values: List<PlaceholderItem>
 ) : RecyclerView.Adapter<ListLevelViewAdapter.ViewHolder>() {

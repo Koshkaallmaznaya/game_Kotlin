@@ -1,5 +1,4 @@
 package ru.dpankratov.hidengallery
-
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -26,11 +25,9 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.homeFragment, R.id.statisticFragment, R.id.listLevelFragment, R.id.levelFragment2
+                R.id.homeFragment, R.id.statisticFragment, R.id.listLevelFragment, R.id.levelFragment2, R.id.textFragment
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

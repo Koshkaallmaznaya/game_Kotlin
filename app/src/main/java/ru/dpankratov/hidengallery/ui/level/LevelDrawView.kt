@@ -32,7 +32,6 @@ class LevelDrawingView(context: Context?, attrs: AttributeSet?) : View(context, 
     private val paintColor = Color.TRANSPARENT
     private var drawCanvas: Canvas? = null
     private var canvasBitmap: Bitmap? = null
-    private var pass: Boolean = false
 
     init {
         setupDrawing()
@@ -99,7 +98,7 @@ class LevelDrawingView(context: Context?, attrs: AttributeSet?) : View(context, 
         }
         val Percentage = (redCount.toFloat() / allPixels.toFloat()) * 100
         val item = PlaceholderContent.currentLevel
-        if (Percentage < 20 && !item?.pass!!) {
+        if (Percentage < 95 && !item?.pass!!) { //20
             item?.pass = true
             val _level = rootView.findViewById<Button>(R.id.textDone)
             _level.isVisible = true
@@ -107,4 +106,3 @@ class LevelDrawingView(context: Context?, attrs: AttributeSet?) : View(context, 
         }
     }
 }
-//Log.i("eve", item?.pass.toString())

@@ -50,7 +50,16 @@
             android:name="levelId"
             app:argType="integer" />
         <action
-            android:id="@+id/action_levelFragment2_to_listLevelFragment"
+            android:id="@+id/action_levelFragment2_to_textFragment"
+            app:destination="@id/textFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/textFragment"
+        android:name="ru.dpankratov.hidengallery.ui.text.TextFragment"
+        android:label="@string/content"
+        tools:layout="@layout/fragment_text" >
+        <action
+            android:id="@+id/action_textFragment_to_listLevelFragment"
             app:destination="@id/listLevelFragment" />
     </fragment>
 
