@@ -3,6 +3,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import ru.dpankratov.hidengallery.databinding.FragmentLevelBinding
 import ru.dpankratov.hidengallery.placeholder.PlaceholderContent
@@ -33,12 +34,14 @@ class LevelFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val item = PlaceholderContent.getItem(levelId)
+        PlaceholderContent.currentLevel = item
         return FragmentLevelBinding.inflate(
             inflater,
             container,
             false
         ).apply {
-             imageView2.setImageResource(item?.photo!!)
+            imageView2.setImageResource(item?.photo!!)
+            textDone.isVisible = item?.pass == true
         }.root
     }
 }

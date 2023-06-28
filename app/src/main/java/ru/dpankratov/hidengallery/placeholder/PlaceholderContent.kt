@@ -1,14 +1,6 @@
 package ru.dpankratov.hidengallery.placeholder
-
 import ru.dpankratov.hidengallery.R
 import kotlin.collections.ArrayList
-
-/**
- * Helper class for providing sample content for user interfaces created by
- * Android template wizards.
- *
- * TODO: Replace all uses of this class before publishing your app.
- */
 
 object PlaceholderContent {
     private val levels = arrayOf(
@@ -23,6 +15,8 @@ object PlaceholderContent {
         PlaceholderItem(17, "описание", R.drawable.photo_level_17, false), PlaceholderItem(18, "описание", R.drawable.photo_level_18, false),
         PlaceholderItem(19, "описание", R.drawable.photo_level_19, false), PlaceholderItem(20, "описание", R.drawable.photo_level_20, false)
     )
+
+    public var currentLevel: PlaceholderItem? = null
 
     fun update() {
         if (getCount() == 0) {
@@ -51,10 +45,7 @@ object PlaceholderContent {
         return DatabaseHandler.getInstance().listOfPictures()
     }
 
-    /**
-     * A placeholder item representing a piece of content.
-     */
-    data class PlaceholderItem(val id: Int, val content: String, val photo: Int, val pass: Boolean) {
+    data class PlaceholderItem(val id: Int, val content: String, val photo: Int, var pass: Boolean) {
         override fun toString(): String = content
     }
 }

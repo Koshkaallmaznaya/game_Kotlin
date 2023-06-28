@@ -1,5 +1,4 @@
 package ru.dpankratov.hidengallery.ui.listlevel
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
@@ -11,9 +10,6 @@ import android.view.ViewGroup
 import ru.dpankratov.hidengallery.R
 import ru.dpankratov.hidengallery.placeholder.PlaceholderContent
 
-/**
- * A fragment representing a list of Items.
- */
 class ListLevelFragment : Fragment() {
 
     private var columnCount = 3

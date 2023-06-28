@@ -1,5 +1,4 @@
 package ru.dpankratov.hidengallery.placeholder
-
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
