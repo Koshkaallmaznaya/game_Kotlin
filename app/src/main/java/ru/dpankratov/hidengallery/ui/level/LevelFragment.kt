@@ -41,5 +41,4 @@ class LevelFragment : Fragment() {
              imageView2.setImageResource(item?.photo!!)
         }.root
     }
-
 }

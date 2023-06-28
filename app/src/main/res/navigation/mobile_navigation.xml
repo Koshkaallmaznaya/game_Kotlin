@@ -49,6 +49,9 @@
         <argument
             android:name="levelId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_levelFragment2_to_listLevelFragment"
+            app:destination="@id/listLevelFragment" />
     </fragment>
 
 </navigation>

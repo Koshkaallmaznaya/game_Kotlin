@@ -31,14 +31,13 @@ class ListLevelViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
-//        holder.idView.text = item.id.toString()
         if (item.pass) {
             holder.idImage.setImageResource(item.photo)
         } else {
             holder.idImage.setImageResource(R.drawable.rectangle)
         }
         holder.itemView.setOnClickListener {
-            val bundle = bundleOf("levelId" to item.id)
+            val bundle = bundleOf("levelId" to item.id) /////бандл набор параметров, которые мы передаем (айди)
             it.findNavController().navigate(R.id.levelFragment2, bundle)
         }
     }
